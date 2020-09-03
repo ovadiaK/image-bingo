@@ -1,0 +1,7 @@
+TEMPLATES_DIR=/root/bingo/templates
+ASSETS_DIR=/root/bingo/assets
+IMAGES_DIR=/root/bingo/images
+HTTP_PORT=:80
+TLS_DIR=/root/bingo/tls
+PRODUCTION=yes
+REDIRECT=yes

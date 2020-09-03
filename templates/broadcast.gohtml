@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo | Broadcast</title>
+    {{template "flavicon"}}
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/broadcast.css">
+</head>
+<body >
+<div class="flex-row">
+    <div id="info" class="flex-column">
+        <img id="logo" src="../assets/logo/gold-blue-icon2.png" alt="MatrixBingo logo">
+        <div id="prize">
+            <p>Prize: <br>
+                <em>{{.Prize}}</em>
+            </p>
+        </div>
+        <h1 id="turn">
+            <span id="current-turn">0</span>/{{.Size}}
+        </h1>
+        <button id="next" onclick="nextTurn()">
+            Next
+        </button>
+    </div>
+    <div class="flex-column">
+        <div id="current-title">
+            <p id="current-image-title"> {{.Img.Title}}</p>
+        </div>
+        <div id="current-image">
+            <img src="{{.Img.Path}}" alt="{{.Img.Title}}" id="main-image" title="{{.Img.Title}}">
+        </div>
+    </div>
+    <div id="matrix">
+        <table>
+            {{range .Matrix}}
+                <tr>
+                    {{range .}}
+                        <td>
+                            <img src="{{.Path}}" alt="{{.Title}}" id="{{.Number}}" title="{{.Title}}">
+                        </td>
+                    {{end}}
+                </tr>
+            {{end}}
+        </table>
+    </div>
+
+</div>
+<script>
+    const order = JSON.parse({{.Order}});
+</script>
+<script src="../assets/js/broadcast.js"></script>
+</body>
+</html>

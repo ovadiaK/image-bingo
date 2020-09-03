@@ -1,0 +1,93 @@
+html {
+    font-size: 5vh;
+    --primary-color: #0231B3;
+    --primary-medium: #4A7AFF;
+    --primary-light: #A6BDFF;
+    --secondary-color: #FFC329;
+    --secondary-light: #FFE9B3;
+    --negative-color: #EB7B8A;
+    --negative-light: #f3aeb7;
+}
+
+body {
+    height: 100vh;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row > * {
+    flex: 1 1;
+}
+
+.flex-column {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.flex-column > * {
+    flex: 1 1;
+}
+
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.clickable:hover,
+.clickable:focus {
+    cursor: pointer;
+    box-shadow: 0 0 1vh var(--primary-light);
+}
+
+img {
+    object-fit: cover;
+}
+
+button {
+    font-size: 5vh;
+    border: var(--primary-color) solid 0.5vh;
+    box-shadow: 0 0 1vh var(--primary-light);
+    border-radius: 2vh;
+    color: var(--secondary-color);
+    text-shadow: 0 0 1vh black;
+    background: linear-gradient(to bottom, var(--primary-medium) 5%, var(--primary-light) 100%);
+}
+
+button:hover {
+    background: linear-gradient(to bottom, var(--primary-light) 5%, var(--primary-medium) 100%);
+}
+
+button.negative {
+    color: var(--primary-color);
+    background: linear-gradient(to bottom, var(--negative-color) 5%, var(--negative-light) 100%);
+}
+
+button.negative:hover {
+    background: linear-gradient(to bottom, var(--negative-light) 5%, var(--negative-color) 100%);
+}
+
+button:active {
+    position: relative;
+    top: 1px;
+}
+img#logo{
+    height: 26vh;
+    width: 28vh;
+    object-fit: contain;
+}

@@ -1,0 +1,8 @@
+nav#nav{
+    background: var(--primary-light);
+    border-bottom: 5px solid var(--primary-medium);
+    color:var(--primary-color);
+}
+nav#nav::selection{
+    color:var(--secondary-color);
+}

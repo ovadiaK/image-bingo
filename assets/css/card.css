@@ -1,0 +1,111 @@
+table.selection, table.selection th, table.selection td {
+    border-collapse: collapse;
+    border: black 1px solid;
+}
+
+.selection img {
+
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-collapse: collapse;
+}
+
+p.symbol-number {
+    font-size: 16px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+p.symbol-name {
+    padding-left: 4px;
+    font-size: 12px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.title img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.title p {
+    padding: 5px 25px;
+    font-size: 16px;
+}
+
+.title p strong {
+    font-size: 46px;
+}
+
+p.footer {
+    padding: 5px 35px;
+    font-size: 24px;
+    margin: 12px;
+}
+
+table.card {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.main-table {
+    page-break-inside: avoid;
+    border-collapse: collapse
+
+}
+
+body {
+    text-align: center;
+}
+
+@media print {
+    table.main-table {
+        width: 100%;
+    }
+
+    table.selection {
+        position: center;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .title img {
+        object-fit: contain;
+    }
+
+    #print {
+        display: none;
+    }
+}
+
+/*button#back {*/
+/*    position: fixed;*/
+/*    top: 5vh;*/
+/*    right: 5vh;*/
+/*    font-size: 8vh;*/
+/*}*/
+
+#print {
+    position: fixed;
+    top: 5vh;
+    left: 5vh;
+}
+
+#print button {
+    font-size: 10vh;
+}
+
+#print article {
+    width: 22vh;
+    font-size: 2vh;
+    border: 0.5vh solid var(--primary-color);
+    border-radius: 1vh;
+    background: var(--primary-light);
+    text-shadow: 1px 1px 0.5vh var(--primary-medium);
+    box-shadow: 0 0 2vh var(--primary-medium);
+}

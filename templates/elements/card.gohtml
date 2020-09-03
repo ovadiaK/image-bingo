@@ -1,0 +1,52 @@
+{{define "card"}}
+    <table class="card">
+        <tr>
+            <td class="flex-row title">
+                <img src="../../assets/logo/gold-blue-icon2.png" alt="MatrixBingo">
+                <p>
+                    <strong>{{.Name}}</strong><br>
+                    ID: {{.Id}}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <table class="selection">
+                                {{ range .Img}}
+                                    <tr>
+                                        {{range .}}
+                                            <td>
+                                                <table class="flex-column">
+
+                                                    <div class="symbol-image ">
+                                                        <img src="{{.Path}}" alt="{{.Title}}"></div>
+
+                                                    <div class=" flex-row">
+                                                        <p class="symbol-number">
+                                                            {{.Number}}
+                                                        </p>
+                                                        <p class="symbol-name">
+                                                            {{.Title}}
+                                                        </p>
+                                                    </div>
+                                                </table>
+                                            </td>
+                                        {{end}}
+                                    </tr>
+                                {{end}}
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="footer"><cite>www.yourdomain.com</cite></p>
+            </td>
+        </tr>
+    </table>
+{{end}}

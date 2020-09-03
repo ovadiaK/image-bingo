@@ -1,0 +1,41 @@
+#mb-introduction {
+    font-size: 4vh;
+    color: black;
+}
+
+div.collections-container {
+    background-color: var(--primary-light);
+    border-radius: 1vh;
+}
+
+div.collections-container h1 {
+    margin: 1vh;
+}
+
+div.collection {
+    text-align: center;
+    margin: 1vh;
+}
+
+.collection button {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    /* put the height and width of your image here */
+    height: 26vh;
+    width: 26vh;
+    object-fit: cover;
+    background-size: cover;
+    border: var(--primary-medium) 1px solid;
+    padding: 13vh;
+}
+
+.collection button:hover {
+    border: var(--secondary-color) 1px solid;
+}
+
+.collection p {
+    margin: 1vh;
+    font-size: 4vh;
+    color: #000000;
+}

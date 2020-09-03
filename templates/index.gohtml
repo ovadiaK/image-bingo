@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo | Welcome</title>
+    {{template "flavicon"}}
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/collection.css">
+    <link rel="stylesheet" href="../assets/css/card.css">
+    <link rel="stylesheet" href="../assets/css/modal.css">
+</head>
+<body>
+{{template "navbar"}}
+<div class="flex-column">
+    <!-- title later nav bar -->
+    <div id="mb-introduction" class="flex-row ">
+        <img src="../assets/logo/gold-blue-icon2.png" alt="matrixbingo" id="logo">
+        <ul>
+            <li>print bingo cards</li>
+            <li>broadcast bingo online</li>
+        </ul>
+    </div>
+
+    <!-- collections container  -->
+    <div id="mb-choose" class="flex-column collections-container">
+        <h1 class="">choose your game</h1>
+        <div id="collections-container" class="flex-row">
+            <!-- single collection-->
+            {{range .Collections}}
+                <div class="collection">
+                    <button class="clickable" onclick="openModal({{.Name}})" type="reset" title="{{.Name}}"
+                            style="background-image: url({{.TitleImage}});">
+                    </button>
+                    <p>{{.Name}} </p>
+                    <p> {{.Size}} symbols </p>
+                </div>
+                <!-- collection modal -->
+                <div id="{{.Name}}" class="modal hide">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span onclick="closeModal({{.Name}})" class="close clickable">&times;</span>
+                            <div class="flex-row">
+                                <img class="modal-icon" src="../assets/logo/gold-blue-icon2.png">
+                                <div class="modal-info">
+                                    <p> {{.Name}} </p>
+                                    <p> {{.Size}} symbols </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-body flex-row">
+
+                            <form class="flex-column" action="/cards/" method="get" target="_blank">
+                                <p class="modal-button-title">how many?</p>
+                                <div class="number-input flex-column-item flex-row">
+                                    <button type="button"
+                                            onclick="this.parentNode.querySelector('input[type=number]').stepDown(4)"
+                                            class="minus clickable"></button>
+                                    <input id="quantity" min="4" max="40" name="amount" value="12" type="number">
+                                    <button type="button"
+                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp(4)"
+                                            class="plus clickable"></button>
+                                </div>
+
+                                <div class="modal-card-example" data-hover="PRINT">
+                                    {{template "card" .Card}}
+                                </div>
+                                <button id="print-button" class="modal-button clickable" name="collection"
+                                        type="submit" value={{.Name}}>
+                                    Print cards
+                                </button>
+                            </form>
+                            <form class="flex-column" action="/game/" target="_blank">
+                                <label about="prize" class="modal-button-title">what's the prize?</label>
+                                <input id="prize" value="tons of fun" name="prize" type="text"
+                                       alt="text field for prize">
+                                <img class="modal-broadcast-example" src={{.TitleImage}}>
+                                <button id="play-button" class="modal-button clickable" name="collection"
+                                        value="{{.Name}}" type="submit">
+                                    Start game
+                                </button>
+                            </form>
+                        </div>
+                        <footer>
+                            <span>
+                                &nbsp;
+                            </span>
+                        </footer>
+                    </div>
+                </div>
+            {{end}}
+        </div>
+    </div>
+</div>
+<footer>
+    <p>Matrixbingo.com All Rights Reserved 2019 &copy;</p>
+</footer>
+<script src="../assets/js/modal.js"></script>
+</body>
+</html>

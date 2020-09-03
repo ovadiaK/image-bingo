@@ -1,0 +1,259 @@
+/*----------------------------------------------------*/
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 5vh; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: scroll; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+@media handheld {
+    .modal {
+        padding-top: 0;
+    }
+
+}
+
+/* add animation to open modal */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/*------------------------------------------------------------*/
+/* Modal Content & Layout */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-header {
+    padding: 0.5vh;
+    background-color: var(--primary-light);
+    color: black;
+}
+
+.modal-header p {
+    margin-block-start: 2vh;
+    margin-block-end: 2vh;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-content footer {
+    padding: 5vh;
+    background: var(--primary-light);
+}
+
+/*-----------------------------------------------------*/
+/* modal header */
+.modal-icon {
+    /*object-fit: cover;*/
+    object-fit: contain;
+    width: 18vh;
+    height: 18vh;
+    align-self: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    /*border: #000000 1px solid;*/
+    /*border-radius: 5vh;*/
+    padding: 0;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    /*cursor: pointer;*/
+}
+
+/* --------------------------------------------------------------- */
+/*  =========   Buttons   =========================================*/
+
+/*!*shared elements*! */
+/*title of the buttons */
+.modal-button-title {
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px black,
+    0 0 2vh var(--secondary-light),
+    0 0 2vh var(--secondary-light),
+    0 0 2vh var(--secondary-light);
+    margin: 0;
+    padding: 2vh 0 1vh 0;
+}
+
+/* =====   cards buttons   ====== */
+/* quantity button   */
+/* copied from somewhere looks not optimized */
+.number-input input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input button {
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    height: 0.5vh;
+    transform: translate(-50%, -50%);
+}
+
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+    text-align: center;
+}
+
+.number-input.number-input {
+    border: 0.2vh solid #ced4da;
+    width: 28vh;
+    border-radius: 1vh;
+}
+
+.number-input.number-input button {
+    width: 7.8vh;
+    height: 2.1vh;
+}
+
+.number-input.number-input button:before,
+.number-input.number-input button:after {
+    width: 2.1vh;
+    background-color: #495057;
+}
+
+.number-input.number-input input[type=number] {
+    max-width: 12vh;
+    border: 0.2vh solid #ced4da;
+    border-width: 0 0.2vh;
+    font-size: 3vh;
+    height: 6vh;
+    color: #495057;
+}
+
+@media not all and (min-resolution: .001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color:transparent) {
+        .number-input.def-number-input.safari_only button:before,
+        .number-input.def-number-input.safari_only button:after {
+            margin-top: -.3vh;
+        }
+    }
+}
+
+/* card example */
+
+/* card example size adaption */
+
+.modal-card-example img {
+    width: 8vh;
+    height: 8vh;
+}
+
+.modal-card-example .title p strong {
+    font-size: 3vh;
+}
+
+.modal-card-example .title p {
+    font-size: 1vh;
+}
+
+.modal-card-example p.symbol-number {
+    font-size: 1vh;
+}
+
+.modal-card-example p.symbol-name {
+    font-size: 1vh;
+}
+
+.modal-card-example p.footer {
+    font-size: 1vh;
+}
+
+/* =====   broadcast button   ===== */
+/*prize text field*/
+#prize {
+    font-size: 4vh;
+    width: 30vh;
+    border-radius: 0.8vh;
+    border: var(--primary-medium) 0.3vh solid;
+    background: var(--secondary-light);
+    color: var(--primary-color);
+    text-shadow: 0 0 0.3vh black;
+}
+
+/* broadcast button */
+.modal-broadcast-example {
+    height: 45vh;
+    width: 45vh;
+    border-radius: 40vh;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 0.2vh solid black;
+    margin: 0.5vh;
+}
+
+

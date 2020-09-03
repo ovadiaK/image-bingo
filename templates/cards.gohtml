@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo | Card</title>
+    {{template "flavicon"}}
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/card.css">
+</head>
+<body >
+
+<div id="print">
+    <button onclick="printCards()" type="button">
+        Print
+    </button>
+    <article>
+        <p>
+            Please adapt you printer settings to print 2 or 4 cards per sheets of paper.
+            We apologize for inconvenience and are working on a solution to fit all paper sizes perfectly.
+            <br>
+            Some known adaptations:
+        </p>
+        <ul>
+            <li>
+                US letter 94% size
+            </li>
+            <li>
+                A6 landscape format
+            </li>
+        </ul>
+    </article>
+</div>
+
+<div align="center">
+    {{range .Cards}}
+        <table class="main-table">
+            <tr>
+                <td>
+                    {{template "card" .CardA}}
+                </td>
+                <td>
+                    {{template "card" .CardB}}
+                </td>
+            </tr>
+        </table>
+    {{end}}
+</div>
+<script src="../assets/js/print.js"></script>
+</body>
+</html>
